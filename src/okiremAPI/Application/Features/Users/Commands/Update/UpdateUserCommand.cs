@@ -17,7 +17,35 @@ public class UpdateUserCommand : IRequest<UpdatedUserResponse>, ISecuredRequest
     public string LastName { get; set; }
     public string Email { get; set; }
     public string Password { get; set; }
-
+    // Kiþisel Bilgiler
+    public string PhoneNumber { get; set; }
+    public DateTime? BirthDate { get; set; }
+    public GenderType Gender { get; set; }
+    public string Address { get; set; }
+    public string NationalId { get; set; }
+    public string ProfileImageUrl { get; set; }
+    public DateTime RegistrationDate { get; set; }
+    public bool IsActive { get; set; }
+    public DateTime? LastLoginDate { get; set; }
+    public string Institution { get; set; }
+    public PositionType Position { get; set; }
+    public LanguageType PreferredLanguage { get; set; }
+    public string Bio { get; set; }
+    public string SocialLinks { get; set; }
+    // Oyunlaþtýrma Bilgileri
+    public int ExperiencePoints { get; set; }
+    public int Level { get; set; }
+    public int BadgeCount { get; set; }
+    public int Coin { get; set; }
+    public int AchievementCount { get; set; }
+    public int Streak { get; set; }
+    public int Rank { get; set; }
+    public int CompletedQuests { get; set; }
+    public string CurrentQuest { get; set; }
+    public double Progress { get; set; }
+    public int TotalLoginCount { get; set; }
+    public bool IsEmailVerified { get; set; }
+    public bool IsPhoneVerified { get; set; }
     public UpdateUserCommand()
     {
         FirstName = string.Empty;
@@ -25,7 +53,6 @@ public class UpdateUserCommand : IRequest<UpdatedUserResponse>, ISecuredRequest
         Email = string.Empty;
         Password = string.Empty;
     }
-
     public UpdateUserCommand(Guid id, string firstName, string lastName, string email, string password)
     {
         Id = id;
@@ -34,7 +61,6 @@ public class UpdateUserCommand : IRequest<UpdatedUserResponse>, ISecuredRequest
         Email = email;
         Password = password;
     }
-
     public string[] Roles => new[] { Admin, Write, UsersOperationClaims.Update };
 
     public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommand, UpdatedUserResponse>
