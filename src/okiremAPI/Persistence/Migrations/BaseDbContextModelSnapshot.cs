@@ -45,6 +45,12 @@ namespace Persistence.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("IsVerified");
 
+                    b.Property<bool>("ResetPasswordToken")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ResetPasswordTokenExpiry")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("UpdatedDate");
@@ -501,7 +507,7 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("294693ba-d7eb-4273-8a4b-10926a705b8c"),
+                            Id = new Guid("9220176a-4863-4c59-8d50-ef08e5f277ea"),
                             AchievementCount = 0,
                             Address = "",
                             AuthenticatorType = 0,
@@ -513,24 +519,24 @@ namespace Persistence.Migrations
                             CurrentQuest = "",
                             Email = "clkibrahim@outlook.com",
                             ExperiencePoints = 0,
-                            FirstName = "Admin",
+                            FirstName = "İbrahim",
                             Gender = 0,
                             Institution = "",
                             IsActive = true,
                             IsEmailVerified = false,
                             IsPhoneVerified = false,
-                            LastName = "User",
+                            LastName = "Çelik",
                             Level = 1,
                             NationalId = "",
-                            PasswordHash = new byte[] { 231, 29, 253, 223, 44, 15, 156, 211, 96, 26, 181, 55, 46, 7, 189, 186, 53, 184, 24, 222, 126, 108, 112, 112, 183, 252, 115, 47, 105, 155, 138, 5, 156, 144, 70, 199, 215, 244, 109, 25, 245, 145, 84, 126, 85, 0, 67, 232, 195, 197, 118, 8, 208, 173, 159, 223, 208, 110, 98, 56, 29, 164, 25, 205 },
-                            PasswordSalt = new byte[] { 151, 67, 33, 48, 50, 123, 163, 82, 38, 47, 204, 42, 220, 190, 51, 2, 217, 108, 214, 65, 205, 121, 212, 159, 129, 16, 11, 37, 28, 196, 222, 9, 11, 34, 117, 36, 147, 89, 139, 113, 212, 59, 135, 65, 180, 130, 184, 164, 64, 161, 113, 234, 203, 135, 27, 196, 31, 12, 238, 137, 242, 133, 39, 118, 126, 162, 128, 59, 134, 231, 226, 30, 213, 82, 227, 108, 106, 107, 50, 129, 92, 102, 50, 234, 138, 26, 125, 98, 212, 21, 217, 8, 253, 64, 178, 113, 105, 234, 240, 164, 145, 239, 252, 151, 110, 234, 252, 207, 69, 57, 207, 135, 3, 19, 6, 76, 151, 212, 165, 120, 71, 91, 21, 235, 229, 203, 250, 123 },
-                            PhoneNumber = "",
+                            PasswordHash = new byte[] { 93, 88, 203, 35, 30, 155, 202, 65, 67, 92, 140, 69, 185, 92, 128, 92, 131, 139, 153, 10, 64, 31, 92, 182, 225, 228, 8, 94, 114, 218, 6, 225, 230, 50, 67, 49, 9, 76, 121, 159, 51, 85, 107, 151, 148, 216, 194, 175, 123, 94, 47, 250, 251, 137, 231, 2, 241, 194, 99, 84, 169, 241, 252, 218 },
+                            PasswordSalt = new byte[] { 13, 253, 199, 143, 143, 127, 208, 235, 52, 103, 78, 243, 132, 166, 102, 52, 149, 244, 238, 247, 5, 176, 43, 178, 187, 100, 224, 209, 99, 189, 30, 104, 98, 241, 99, 194, 138, 240, 156, 255, 209, 195, 7, 107, 250, 9, 124, 6, 10, 14, 145, 5, 10, 33, 219, 168, 234, 218, 119, 110, 208, 198, 193, 74, 21, 83, 88, 169, 27, 36, 62, 160, 179, 35, 206, 9, 207, 124, 88, 237, 237, 125, 14, 211, 154, 240, 28, 58, 192, 190, 40, 76, 20, 222, 119, 137, 222, 143, 141, 233, 50, 83, 247, 19, 155, 159, 60, 216, 72, 91, 66, 136, 46, 140, 45, 15, 61, 84, 237, 85, 129, 32, 166, 233, 192, 82, 98, 188 },
+                            PhoneNumber = "05305618806",
                             Position = 0,
                             PreferredLanguage = 1,
                             ProfileImageUrl = "",
                             Progress = 0.0,
                             Rank = 0,
-                            RegistrationDate = new DateTime(2025, 8, 5, 19, 55, 31, 762, DateTimeKind.Utc).AddTicks(4517),
+                            RegistrationDate = new DateTime(2025, 8, 6, 21, 20, 49, 92, DateTimeKind.Utc).AddTicks(8148),
                             SocialLinks = "",
                             Streak = 0,
                             TotalLoginCount = 0
@@ -575,10 +581,10 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a7370d02-fa23-4d70-9afc-b4fcb7df6c1a"),
+                            Id = new Guid("588c6ec4-4a09-4144-8180-8ac8849b97c5"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OperationClaimId = 1,
-                            UserId = new Guid("294693ba-d7eb-4273-8a4b-10926a705b8c")
+                            UserId = new Guid("9220176a-4863-4c59-8d50-ef08e5f277ea")
                         });
                 });
 

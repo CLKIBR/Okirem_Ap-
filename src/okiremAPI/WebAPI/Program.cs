@@ -1,4 +1,5 @@
 using Application;
+using Application.Services.AuthService;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -82,6 +83,9 @@ builder.Services.AddSwaggerGen(opt =>
     );
     opt.OperationFilter<BearerSecurityRequirementOperationFilter>();
 });
+
+// CustomTokenHelper'ý DI container'a ekle
+builder.Services.AddScoped<NArchitecture.Core.Security.JWT.ITokenHelper<System.Guid, int, System.Guid>, CustomTokenHelper>();
 
 WebApplication app = builder.Build();
 
