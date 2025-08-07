@@ -63,6 +63,14 @@ public class User : User<Guid>
     public bool IsEmailVerified { get; set; } // E-posta doğrulama durumu
     public bool IsPhoneVerified { get; set; } // Telefon doğrulama durumu
 
+    public User()
+    {
+        UserOperationClaims = new HashSet<UserOperationClaim>();
+        RefreshTokens = new HashSet<RefreshToken>();
+        OtpAuthenticators = new HashSet<OtpAuthenticator>();
+        EmailAuthenticators = new HashSet<EmailAuthenticator>();
+    }
+
     public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } = default!;
     public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = default!;
     public virtual ICollection<OtpAuthenticator> OtpAuthenticators { get; set; } = default!;
