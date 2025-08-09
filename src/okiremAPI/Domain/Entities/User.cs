@@ -1,33 +1,7 @@
 ﻿using NArchitecture.Core.Security.Entities;
+using Domain.Enums;
 
 namespace Domain.Entities;
-
-public enum GenderType
-{
-    NotSpecified = 0,
-    Male = 1,
-    Female = 2,
-    Other = 3
-}
-
-public enum LanguageType
-{
-    NotSpecified = 0,
-    Turkish = 1,
-    English = 2,
-    German = 3,
-    French = 4
-}
-
-public enum PositionType
-{
-    NotSpecified = 0,
-    Student = 1,
-    Teacher = 2,
-    Admin = 3,
-    Parent = 4,
-    Other = 5
-}
 
 public class User : User<Guid>
 {

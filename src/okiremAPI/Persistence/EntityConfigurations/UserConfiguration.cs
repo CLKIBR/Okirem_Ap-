@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Domain.Enums;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NArchitecture.Core.Security.Hashing;
@@ -86,7 +87,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                     LastName = "Çelik",
                     PhoneNumber = "05305618806",
                     BirthDate = null,
-                    Gender = Domain.Entities.GenderType.NotSpecified,
+                    Gender = GenderType.NotSpecified,
                     Address = "",
                     NationalId = "",
                     ProfileImageUrl = "",
@@ -94,8 +95,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
                     IsActive = true,
                     LastLoginDate = null,
                     Institution = "",
-                    Position = Domain.Entities.PositionType.NotSpecified,
-                    PreferredLanguage = Domain.Entities.LanguageType.Turkish,
+                    Position = PositionType.NotSpecified,
+                    PreferredLanguage = LanguageType.Turkish,
                     Bio = "",
                     SocialLinks = "",
                     ExperiencePoints = 0,

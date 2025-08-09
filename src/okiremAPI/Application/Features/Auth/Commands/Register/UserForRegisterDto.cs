@@ -1,4 +1,5 @@
 using Domain.Entities;
+using Domain.Enums;
 using NArchitecture.Core.Application.Dtos;
 
 namespace Application.Features.Auth.Commands.Register;

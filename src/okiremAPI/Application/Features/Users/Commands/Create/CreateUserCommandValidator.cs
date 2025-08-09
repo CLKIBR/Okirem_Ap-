@@ -1,9 +1,8 @@
-﻿using FluentValidation;
+﻿using Domain.Enums;
+using FluentValidation;
 using System.Collections.Generic;
 using System.Linq;
-using Domain.Entities;
-
-namespace Application.Features.Users.Commands.Create;
+using Application.Features.Users.Commands.Create;
 
 public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
 {

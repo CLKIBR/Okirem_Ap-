@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Domain.Entities;
+﻿using Domain.Enums;
 using FluentValidation;
-
-namespace Application.Features.Users.Commands.Update;
+using System.Collections.Generic;
+using System.Linq;
+using Application.Features.Users.Commands.Update;
 
 public class UpdateUserCommandValidator : AbstractValidator<UpdateUserCommand>
 {
@@ -12,10 +11,10 @@ public class UpdateUserCommandValidator : AbstractValidator<UpdateUserCommand>
     private static readonly List<LanguageType> AllowedLanguages = new() { LanguageType.NotSpecified, LanguageType.Turkish, LanguageType.English, LanguageType.German, LanguageType.French };
     public UpdateUserCommandValidator()
     {
+        // Zorunlu alanlar
         RuleFor(c => c.FirstName).NotEmpty().MinimumLength(2);
         RuleFor(c => c.LastName).NotEmpty().MinimumLength(2);
         RuleFor(c => c.Email).NotEmpty().EmailAddress();
-        RuleFor(c => c.Password).NotEmpty().MinimumLength(4);
         RuleFor(c => c.Gender)
             .Must(g => AllowedGenders.Contains(g))
             .WithMessage($"Gender must be one of: {string.Join(", ", AllowedGenders)}");
@@ -25,5 +24,7 @@ public class UpdateUserCommandValidator : AbstractValidator<UpdateUserCommand>
         RuleFor(c => c.PreferredLanguage)
             .Must(l => AllowedLanguages.Contains(l))
             .WithMessage($"PreferredLanguage must be one of: {string.Join(", ", AllowedLanguages)}");
+        // Opsiyonel alanlar için ek validasyon istenirse eklenebilir
+        // Örneğin: RuleFor(c => c.PhoneNumber).MaximumLength(20);
     }
 }
